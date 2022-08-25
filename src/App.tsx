@@ -1,11 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Dashboard from './Components/Dashboard/Dashboard';
-import Footer from './Components/Footer/Footer';
-import Header from './Components/Header/Header';
-import Main from './Components/Main/Main';
-import Sidebar from './Components/Sidebar/Sidebar';
+import Dashboard from './Components/LayoutArea/Dashboard/Dashboard';
+import Footer from './Components/LayoutArea/Footer/Footer';
+import Header from './Components/LayoutArea/Header/Header';
+import Main from './Components/LayoutArea/Main/Main';
+import Sidebar from './Components/LayoutArea/Sidebar/Sidebar';
 
 function App() {
   return (

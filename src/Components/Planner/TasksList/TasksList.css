@@ -1,0 +1,12 @@
+.TasksList {
+    height: 100%;
+}
+
+.TasksContainer{
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: center; */
+
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}

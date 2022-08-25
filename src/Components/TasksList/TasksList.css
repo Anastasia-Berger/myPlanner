@@ -1,9 +1,0 @@
-.TasksList {
-    height: 100%;
-}
-
-.TasksContainer{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
