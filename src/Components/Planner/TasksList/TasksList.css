@@ -3,10 +3,10 @@
 }
 
 .TasksContainer{
-    /* display: flex;
+    display: flex;
     flex-wrap: wrap;
-    justify-content: center; */
+    justify-content: center;
 
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr);} */
 }

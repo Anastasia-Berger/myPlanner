@@ -1,3 +1,12 @@
 .SocialMedia {
-	
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.SocialMedia>a {
+    /* margin: 0 5px;
+    color: rgb(0, 0, 0);
+    font-weight: 100; */
 }

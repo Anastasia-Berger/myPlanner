@@ -4,7 +4,7 @@ import "./Footer.css";
 function Footer(): JSX.Element {
     return (
         <div className="Footer">
-            <div className="credits">@BergerAnastasia</div>
+            <div className="credits"> &copy; BergerAnastasia</div>
             <SocialMedia />
         </div>
     );
