@@ -7,12 +7,12 @@ function Dashboard(): JSX.Element {
     return (
         <div className="Dashboard">
 
-            <div className="Dash-header">
+            <div className="Dashboard-header">
                 <Logo />
                 <AppName />
             </div>
 
-            <nav className="Navbar">
+            <nav className="sidebar">
                 <CustomLink to="home">Home</CustomLink>
                 <CustomLink to="about">About</CustomLink>
                 <CustomLink to="tasks">Tasks</CustomLink>

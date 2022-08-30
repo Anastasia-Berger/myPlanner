@@ -4,6 +4,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Task } from "../../../Models/Task";
 import axios from "axios";
+import globals from "../../../Services/Globals";
 
 function AddTask(): JSX.Element {
 
@@ -41,7 +42,7 @@ function AddTask(): JSX.Element {
 
         // sending post request to spring boot
         console.log(formData);
-        await axios.post<Task>('http://localhost:8080/api/tasks/', formData)
+        await axios.post<Task>(globals.urls.tasks, formData)
             .then(res => { alert(JSON.stringify(res.data)) })
             .catch(err => { console.log(err); });
     }
@@ -50,13 +51,15 @@ function AddTask(): JSX.Element {
     return (
         <div className="AddTask">
 
-            <form onSubmit={handleSubmit(addTask)} >
+            <h2>Add Task</h2>
+            <p>Fill the form below to add a task to your planner.</p>
+            <form onSubmit={handleSubmit(addTask)} className="inputGroup">
 
                 {
                     errors.title?.message ?
                         <><span>{errors?.title?.message}</span></>
                         :
-                        <><label htmlFor="title">Title</label></>
+                        <><label htmlFor="title"></label></>
                 }
 
                 <input {...register("title")}
@@ -64,14 +67,14 @@ function AddTask(): JSX.Element {
                     name="title"
                     type="text"
                     placeholder="Title"
+                    autoComplete="off"
                 />
-
 
                 {
                     errors.description?.message ?
                         <><span>{errors?.description?.message}</span></>
                         :
-                        <><label htmlFor="description">Description</label></>
+                        <><label htmlFor="description"></label></>
                 }
 
                 <input {...register("description")}
@@ -86,7 +89,7 @@ function AddTask(): JSX.Element {
                     errors.group?.message ?
                         <><span>{errors?.group?.message}</span></>
                         :
-                        <><label htmlFor="group">Group</label></>
+                        <><label htmlFor="group"></label></>
                 }
 
                 <input {...register("group")}
@@ -103,7 +106,7 @@ function AddTask(): JSX.Element {
                             <span>{errors?.when?.message}</span>
                         </> :
                         <>
-                            <label htmlFor="when">When:</label>
+                            <label htmlFor="when"></label>
                         </>
                 }
                 <input

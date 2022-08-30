@@ -1,12 +1,7 @@
 .CustomLink {
-	color: #000000;
-    margin-bottom: 10px;
     text-decoration: none;
 }
 
-.CustomLink .active {
-    color: #ff0000;
-    border-bottom: 2px solid #000000;
-    font-weight: bold;
-    text-decoration: dashed;
+.CustomLink.active {
+    color: #666;
 }

@@ -1,12 +1,18 @@
-.TasksList {
-    height: 100%;
+.TaskListHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
 }
 
-.TasksContainer{
+.TaskListHeader>button {
+    padding: 0.1em 0.4em;
+    font-size: 1.8em;
+    border-radius: 1.5em;
+}
+
+.TasksContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
-    /* display: grid;
-    grid-template-columns: repeat(3, 1fr);} */
 }

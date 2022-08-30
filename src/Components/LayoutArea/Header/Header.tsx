@@ -4,12 +4,12 @@ import "./Header.css";
 
 function Header(): JSX.Element {
     return (
-        <header className="Header">
+        <div className="Header">
 
             <Total />
             <Clock />
 
-        </header>
+        </div>
     );
 }
 

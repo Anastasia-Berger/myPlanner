@@ -1,18 +1,41 @@
 .TaskItem {
     display: flex;
     flex-direction: column;
-    padding-right: 0;
-    background-color: #fff;
-
-    border-radius: 20px;
 
     min-width: 300px;
     max-width: 5rem;
-    
-    margin: 13px;
-    padding: 10px;
 
-    box-shadow: 5px 2px 24px 0px rgba(66, 68, 90, 0.26);
+    margin: 35px;
+    padding: 13px;
+}
+
+/* From uiverse.io by @adamgiebl */
+.card {
+    /* width: 190px;
+    height: 254px; */
+    border-radius: 30px;
+    background: #e0e0e0;
+    box-shadow: 15px 15px 30px #bebebe,
+        -15px -15px 30px #ffffff;
+}
+
+
+.TaskItem>.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.buttons>button {
+    /* color: #090909; */
+    padding: 0.8em 1em;
+    /* font-size: 1rem; */
+    border-radius: 1.5em;
+    /* background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    transition: all .3s;
+    box-shadow: 6px 6px 12px #c5c5c5,
+        -6px -6px 12px #ffffff; */
 }
 
 .BoxImage {
@@ -36,10 +59,4 @@
 
 .TaskDetails>p {
     margin: 0;
-}
-
-.TaskItem > .buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
 }

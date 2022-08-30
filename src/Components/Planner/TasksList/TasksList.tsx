@@ -4,6 +4,7 @@ import { Task } from "../../../Models/Task";
 import notify, { SccMsg } from "../../../Services/Notification";
 import { getTasks } from "../../../Services/TasksApi";
 import CustomLink from "../../Shared/CustomLink/CustomLink";
+import EmptyView from "../../Shared/EmptyView/EmptyView";
 import TaskItem from "../TaskItem/TaskItem";
 import "./TasksList.css";
 
@@ -24,17 +25,25 @@ function TasksList(): JSX.Element {
 
     return (
         <div className="TasksList">
-            <h2>List Of Tasks</h2>
 
-            <div className="buttons">
-                <CustomLink to="/tasks/add"><FiPlusCircle size={30}/></CustomLink>
-                
-                <FiMinusCircle size={30}/>
+            <div className="TaskListHeader">
+                <h2>List Of Tasks</h2>
+                <button><CustomLink to="/tasks/add"> + </CustomLink>
+            </button>
             </div>
 
-            <div className="TasksContainer">
-                {tasks.map((task) => <TaskItem key={task.id} task={task} />)}
-            </div>
+            {(tasks?.length > 0)
+                ?
+                <>
+                    <div className="TasksContainer">
+                        {tasks.map((task) => <TaskItem key={task.id} task={task} />)}
+                    </div>
+                </>
+                :
+                <>
+                    <EmptyView msg="NO TASKS FOR YOU" />
+                </>}
+
 
         </div>
     );

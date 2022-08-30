@@ -10,11 +10,11 @@ interface TaskItemProps {
 
 function TaskItem(props: TaskItemProps): JSX.Element {
     return (
-        <div className="TaskItem">
+        <div className="TaskItem card">
 
             <div className="buttons">
-                <FiTrash size={25}/>
-                <FiSettings size={25}/>
+                <button><FiTrash size={20}/></button>
+                <button><FiSettings size={20}/></button>
             </div>
 
             <div className="BoxImage">
@@ -28,7 +28,7 @@ function TaskItem(props: TaskItemProps): JSX.Element {
                 <p>Title : {props.task.title} </p>
                 <p>Description : {props.task.description} </p>
                 <p>Group : {props.task.group} </p>
-                <ILTime date={props.task.when || new Date} />
+                <ILTime date={props.task.when || new Date()} />
             </div>
         </div>
     );
