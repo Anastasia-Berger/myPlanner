@@ -2,7 +2,7 @@ import moment from "moment";
 import "./ILTime.css";
 
 interface ILTimeProps {
-    date: Date
+    date: Date;
 }
 
 function ILTime(props: ILTimeProps): JSX.Element {

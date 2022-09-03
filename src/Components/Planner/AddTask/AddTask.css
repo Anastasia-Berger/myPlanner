@@ -1,14 +1,19 @@
 .AddTask {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     height: 100%;
+    width: 100%;
 }
 
 .AddTask>form {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     row-gap: 10px;
 }
 
-.AddTask span {
+/* .AddTask span {
     color: rgb(252, 38, 38);
-}
+} */

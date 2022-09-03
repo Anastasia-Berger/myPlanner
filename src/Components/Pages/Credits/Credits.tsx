@@ -18,6 +18,10 @@ function Credits(): JSX.Element {
             <br/>
             <a href="https://react-icons.github.io/react-icons/">React Icons</a>
 
+            <h2>Illustrations</h2>
+            <br/>
+            <a href="https://www.freepik.com/">freepik</a>
+
         </div>
     );
 }

@@ -64,18 +64,14 @@ button:active {
 
 /* GLOBAL FORM CSS */
 
-/* From uiverse.io by @Maximinodotpy */
 .inputGroup {
-  /* font-family: 'Segoe UI', sans-serif; */
-  margin: 1em 0 1em 0;
-  max-width: 190px;
-  /* position: relative; */
+  margin: 1em 0;
+  max-width: 300px;
 }
 
 .inputGroup input {
   font-size: 100%;
-  padding: 0.8em;
-  outline: none;
+  padding: 0.8em 1em;
   border: 2px solid rgb(200, 200, 200);
   background-color: transparent;
   border-radius: 20px;

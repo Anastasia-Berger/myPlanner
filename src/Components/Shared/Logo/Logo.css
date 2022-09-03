@@ -1,4 +1,6 @@
-.Logo {}
+.Logo {
+    margin: 0 2em;
+}
 
 .App-logo {
     height: 10vmin;

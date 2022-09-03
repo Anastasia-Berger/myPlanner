@@ -2,8 +2,8 @@
     background-color: #E8E8E8;
     padding: 1rem 2rem;
 }
-/* 
+
 .Routing {
-    height: auto;
-    width: 100%;
-} */
+    height: fit-content;
+    min-width: 100%;
+}

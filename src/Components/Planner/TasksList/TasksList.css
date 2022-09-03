@@ -2,10 +2,10 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 1em;
+    gap: 0.5em;
 }
 
-.TaskListHeader>button {
+.TaskListHeader button {
     padding: 0.1em 0.4em;
     font-size: 1.8em;
     border-radius: 1.5em;

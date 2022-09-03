@@ -3,10 +3,15 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Task } from "../../../Models/Task";
-import axios from "axios";
-import globals from "../../../Services/Globals";
+import { useNavigate } from "react-router-dom";
+import notify, { SccMsg } from "../../../Services/Notification";
+import { addTask } from "../../../Services/TasksApi";
+import store from "../../../Redux/store";
+import { taskAddedAction } from "../../../Redux/TasksAppState";
 
 function AddTask(): JSX.Element {
+
+    const navigate = useNavigate();
 
     const schema = yup.object().shape({
         title:
@@ -30,21 +35,21 @@ function AddTask(): JSX.Element {
     const { register, handleSubmit, formState: { errors, isDirty, isValid } } =
         useForm<Task>({ mode: "all", resolver: yupResolver(schema) });
 
+    const sendToRemote = async (task: Task) => {
 
-    const addTask = async (task: Task) => {
-        const formData = new FormData();
-        formData.append("title", task.title as string);
-        formData.append("description", task.description as string);
-        formData.append("group", task.group as string);
-        const exp = (task.when?.toISOString().split('T')[0]);
-        formData.append("when", exp as string);
+        await addTask(task)
+            .then(res => {
+                notify.success(SccMsg.ADDED_TASK);
+                // Updating global state
+                store.dispatch(taskAddedAction(res.data));
+                navigate('/tasks');
 
-
-        // sending post request to spring boot
-        console.log(formData);
-        await axios.post<Task>(globals.urls.tasks, formData)
-            .then(res => { alert(JSON.stringify(res.data)) })
-            .catch(err => { console.log(err); });
+            })
+            .catch(err => {
+                notify.error(err);
+                console.log(err);
+                console.log(err.message);
+            });
     }
 
 
@@ -53,7 +58,7 @@ function AddTask(): JSX.Element {
 
             <h2>Add Task</h2>
             <p>Fill the form below to add a task to your planner.</p>
-            <form onSubmit={handleSubmit(addTask)} className="inputGroup">
+            <form onSubmit={handleSubmit(sendToRemote)} className="inputGroup">
 
                 {
                     errors.title?.message ?
